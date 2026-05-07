@@ -144,16 +144,70 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    const targetPage = this.innerHTML.toLowerCase();
+
+    for (let j = 0; j < pages.length; j++) {
+      if (targetPage === pages[j].dataset.page) {
+        pages[j].classList.add("active");
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
       }
     }
 
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.remove("active");
+    }
+    this.classList.add("active");
+    window.scrollTo(0, 0);
+
   });
 }
+
+// --- SCROLL REVEAL ANIMATION ---
+const revealElements = document.querySelectorAll("[data-reveal]");
+
+const revealObserver = new IntersectionObserver(
+  function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        // Keep it revealed or unobserve to only animate once
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  }
+);
+
+// Auto-assign [data-reveal] to elements we want to animate on scroll
+const autoRevealElements = document.querySelectorAll('.service-item, .timeline-item, .skill-category, .blog-post-item');
+autoRevealElements.forEach(el => {
+  el.setAttribute("data-reveal", "");
+  revealObserver.observe(el);
+});
+
+// --- 3D TILT EFFECT ON HOVER ---
+const tiltElements = document.querySelectorAll('.project-item > a, .content-card, .service-item');
+
+tiltElements.forEach(el => {
+  el.addEventListener('mousemove', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left; // x position within the element.
+    const y = e.clientY - rect.top;  // y position within the element.
+    
+    // Calculate rotation between -10 and 10 degrees based on cursor position
+    const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -10;
+    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 10;
+    
+    this.style.setProperty('--rotateX', `${rotateX}deg`);
+    this.style.setProperty('--rotateY', `${rotateY}deg`);
+  });
+  
+  el.addEventListener('mouseleave', function() {
+    this.style.setProperty('--rotateX', '0deg');
+    this.style.setProperty('--rotateY', '0deg');
+  });
+});

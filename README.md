@@ -1,44 +1,53 @@
-# vCard - Personal portfolio
+# Rayen Mrad — Personal Portfolio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+This repository contains the source code for my personal portfolio website.
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+I’m **Rayen Mrad**, an Industrial IT and Automation Engineering student at INSAT (Tunis, Tunisia). This site highlights my education, experience, projects, skills, certifications, and ways to contact me.
 
-## Demo
+## Features
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+- **About Me**: A brief introduction to my background and what I do.
+- **Resume**: Details about my education, internships, and professional experience.
+- **Projects**: A categorized showcase of my projects in AI, Computer Vision, Web Development, Embedded Systems, and more.
+- **Extracurricular Activities**: Highlights of my extracurricular activities and leadership roles.
+- **Certifications**: A gallery of the various certifications I have obtained.
+- **Contact**: A functional contact form to get in touch with me directly.
 
-## Prerequisites
+## Technologies Used
 
-Before you begin, ensure you have met the following requirements:
+- HTML5
+- CSS3 (Custom Styling & Animations)
+- JavaScript (Vanilla)
+- Ionicons
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+## Run Locally
 
-## Installing vCard
+Option A (quick): open [index.html](index.html) in your browser.
 
-To install **vCard**, follow these steps:
+Option B (recommended): use a local server (avoids some browser restrictions on local files).
 
-Linux and macOS:
+- VS Code: install **Live Server**, then “Open with Live Server”.
+- Python:
+  ```bash
+  python -m http.server 8000
+  ```
+  then visit `http://localhost:8000`.
 
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
+## Customize
 
-Windows:
+- Main page content: edit [index.html](index.html)
+- Styles: [assets/css/style.css](assets/css/style.css)
+- Scripts: [assets/js/script.js](assets/js/script.js)
+- Images & PDFs: [assets/images](assets/images) and [cerifs](cerifs)
 
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
+## Attribution
+
+This portfolio is based on the **vCard** template by **codewithsadee** (MIT licensed). See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-If you want to contact me you can reach me at [Twitter](https://www.x.com/codewithsadee_).
+Feel free to reach out to me! You can find me on:
 
-## License
-
-MIT
+- **LinkedIn:** [rayenmrad](https://www.linkedin.com/in/rayenmrad/)
+- **GitHub:** [fannen-prt1](https://github.com/fannen-prt1)
+- **Email:** rayen.mrad@insat.ucar.tn
