@@ -40,7 +40,7 @@
       <span class="sticky-name">Mrad Rayen</span>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <div class="sticky-header-controls">
       <!-- Blogs Dropdown Action -->
       <div class="header-blog-dropdown-wrapper">
         <button class="header-action-btn blog-dropdown-toggle" title="Explore Blogs">
@@ -136,7 +136,22 @@
       </div>
 
       <!-- Header Actions Top Right -->
-      <div style="position: absolute; top: 30px; right: 30px; z-index: 20;" class="header-actions-group">
+      <div class="header-actions-group hero-header-actions">
+        <div class="mobile-page-menu dropdown-nav-wrapper">
+          <button class="dropdown-nav-btn mobile-page-menu-toggle" type="button">
+            <span>Home</span>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <ul class="dropdown-nav-menu">
+            <li class="dropdown-nav-item active" data-nav-target="home">Home</li>
+            <li class="dropdown-nav-item" data-nav-target="resume">About</li>
+            <li class="dropdown-nav-item" data-nav-target="projects">Projects</li>
+            <li class="dropdown-nav-item" data-nav-target="extracurricular activities">Activities</li>
+            <li class="dropdown-nav-item" data-nav-target="certifications">Certifications</li>
+            <li class="dropdown-nav-item" data-nav-target="contact">Contact</li>
+          </ul>
+        </div>
+
         <!-- Blogs Dropdown Action -->
         <div class="header-blog-dropdown-wrapper">
           <button class="header-action-btn blog-dropdown-toggle" title="Explore Blogs">
@@ -145,7 +160,7 @@
             <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon>
           </button>
           <div class="blog-dropdown-menu">
-            <a href="https://medium.com/@rayen.mrad" target="_blank" class="blog-dropdown-item">
+            <a href="https://medium.com/@rayenmrad4" target="_blank" class="blog-dropdown-item">
               <ion-icon name="logo-medium"></ion-icon>
               <div>
                 <strong>Medium Account</strong>

@@ -129,6 +129,8 @@ const dropdownWrapper = document.getElementById("dropdown-nav-wrapper");
 const dropdownBtn = document.getElementById("dropdown-nav-btn");
 const stickyHeader = document.getElementById("sticky-scroll-header");
 const scrollDownBtn = document.getElementById("scroll-down-btn");
+const mobilePageMenu = document.querySelector(".mobile-page-menu");
+const mobilePageMenuToggle = document.querySelector(".mobile-page-menu-toggle");
 
 const pageTitleMap = {
   "home": "Home",
@@ -163,10 +165,27 @@ const switchPage = function (targetPage) {
     currentPageLabel.innerText = pageTitleMap[normalizedTarget];
   }
 
+  if (mobilePageMenuToggle && pageTitleMap[normalizedTarget]) {
+    mobilePageMenuToggle.querySelector("span").innerText = pageTitleMap[normalizedTarget];
+  }
+
   if (dropdownWrapper) {
     dropdownWrapper.classList.remove("open");
   }
 };
+
+if (mobilePageMenuToggle && mobilePageMenu) {
+  mobilePageMenuToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    mobilePageMenu.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!mobilePageMenu.contains(e.target)) {
+      mobilePageMenu.classList.remove("open");
+    }
+  });
+}
 
 // Handle stat-card navigation before other click handlers receive the event.
 document.addEventListener('click', function (e) {
