@@ -31,19 +31,24 @@ const testimonialsModalFunc = function () {
   }
 }
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", function () {
-    if (modalImg) {
-      modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-      modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+// add click event to all modal items (delegated + direct)
+document.addEventListener("click", function(e) {
+  const item = e.target.closest("[data-testimonials-item]");
+  if (item) {
+    const avatar = item.querySelector("[data-testimonials-avatar]");
+    const title = item.querySelector("[data-testimonials-title]");
+    const text = item.querySelector("[data-testimonials-text]");
+
+    if (modalImg && avatar) {
+      modalImg.src = avatar.src;
+      modalImg.alt = avatar.alt;
     }
-    if (modalTitle) modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    if (modalText) modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    if (modalTitle && title) modalTitle.innerHTML = title.innerHTML;
+    if (modalText && text) modalText.innerHTML = text.innerHTML;
 
     testimonialsModalFunc();
-  });
-}
+  }
+});
 
 // add click event to modal close button
 if (modalCloseBtn) modalCloseBtn.addEventListener("click", testimonialsModalFunc);
@@ -126,8 +131,9 @@ const stickyHeader = document.getElementById("sticky-scroll-header");
 const scrollDownBtn = document.getElementById("scroll-down-btn");
 
 const pageTitleMap = {
-  "about": "About",
-  "resume": "Resume",
+  "home": "Home",
+  "about": "Home",
+  "resume": "About",
   "projects": "Projects",
   "extracurricular activities": "Activities",
   "certifications": "Certifications",
@@ -162,13 +168,45 @@ const switchPage = function (targetPage) {
   }
 };
 
+// Handle stat-card navigation before other click handlers receive the event.
+document.addEventListener('click', function (e) {
+  const card = e.target.closest('.stat-card[data-nav-target]:not(.blog-dropdown-wrapper)');
+  if (!card) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+  switchPage(card.getAttribute('data-nav-target'));
+
+  const mainContent = document.getElementById('main-content');
+  if (mainContent) {
+    const sectionPos = mainContent.getBoundingClientRect().top + window.pageYOffset - 50;
+    window.scrollTo({ top: Math.max(0, sectionPos), behavior: 'smooth' });
+  }
+}, true);
+
 // Add delegated click listener for all data-nav-target elements
 document.addEventListener("click", function (e) {
   const navTargetElem = e.target.closest("[data-nav-target]");
   if (navTargetElem) {
     const targetPage = navTargetElem.getAttribute("data-nav-target");
+    const scrollToId = navTargetElem.getAttribute("data-scroll-to");
+
     if (targetPage) {
       switchPage(targetPage);
+
+      if (scrollToId) {
+        const targetSection = document.getElementById(scrollToId);
+        if (targetSection) {
+          setTimeout(() => {
+            const sectionPos = targetSection.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({
+              top: Math.max(0, sectionPos),
+              behavior: "smooth"
+            });
+          }, 100);
+          return;
+        }
+      }
 
       const mainContent = document.getElementById("main-content");
       if (mainContent) {
@@ -195,6 +233,31 @@ if (dropdownBtn && dropdownWrapper) {
     }
   });
 }
+
+// CV Dropdown & Blog Dropdown button toggling
+document.addEventListener("click", function (e) {
+  const cvToggleBtn = e.target.closest(".cv-dropdown-toggle");
+  if (cvToggleBtn) {
+    e.stopPropagation();
+    const wrapper = cvToggleBtn.closest(".header-cv-dropdown-wrapper");
+    if (wrapper) {
+      wrapper.classList.toggle("open");
+    }
+  } else {
+    document.querySelectorAll(".header-cv-dropdown-wrapper").forEach(w => w.classList.remove("open"));
+  }
+
+  const blogToggleBtn = e.target.closest(".blog-dropdown-toggle, .stat-card.blog-dropdown-wrapper");
+  if (blogToggleBtn) {
+    e.stopPropagation();
+    const wrapper = blogToggleBtn.closest(".header-blog-dropdown-wrapper, .stat-card.blog-dropdown-wrapper");
+    if (wrapper) {
+      wrapper.classList.toggle("open");
+    }
+  } else {
+    document.querySelectorAll(".header-blog-dropdown-wrapper, .stat-card.blog-dropdown-wrapper").forEach(w => w.classList.remove("open"));
+  }
+});
 
 // Scroll down indicator button
 if (scrollDownBtn) {
@@ -239,8 +302,66 @@ autoRevealElements.forEach(el => {
   revealObserver.observe(el);
 });
 
+// --- HOME 3D BOX SCROLL REVEAL ---
+const home3DObserver = new IntersectionObserver(
+  function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed-3d");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+document.querySelectorAll('article[data-page="home"] .home-box').forEach(box => {
+  home3DObserver.observe(box);
+});
+
+// --- ANIMATED NUMBER COUNTER FOR STATS ---
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  if (isNaN(target)) return;
+  const duration = 1600;
+  const startTime = performance.now();
+
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeProgress = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(easeProgress * target);
+    el.innerText = current;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.innerText = target;
+    }
+  }
+  requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver(
+  function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const numbers = entry.target.querySelectorAll('.stat-number');
+        numbers.forEach(numEl => animateCounter(numEl));
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+const statsBox = document.querySelector('.home-stats-box');
+if (statsBox) {
+  statsObserver.observe(statsBox);
+}
+
 // --- 3D TILT EFFECT ON HOVER ---
-const tiltElements = document.querySelectorAll('.project-item > a, .content-card, .service-item');
+const tiltElements = document.querySelectorAll('.project-item > a, .content-card, .service-item, .stat-card');
 
 tiltElements.forEach(el => {
   el.addEventListener('mousemove', function(e) {
@@ -248,8 +369,8 @@ tiltElements.forEach(el => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -10;
-    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 10;
+    const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -8;
+    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 8;
     
     this.style.setProperty('--rotateX', `${rotateX}deg`);
     this.style.setProperty('--rotateY', `${rotateY}deg`);
@@ -316,5 +437,44 @@ document.addEventListener("click", function (e) {
 
 const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
 applyTheme(savedTheme);
+
+// --- TYPEWRITER & DELETE ANIMATION FOR ROLES ---
+const typewriterEl = document.getElementById("typewriter-text");
+if (typewriterEl) {
+  const roles = [
+    "Industrial IT & Automation Student",
+    "Machine Learning Practitioner"
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeRole() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+      typewriterEl.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typewriterEl.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      typeSpeed = 2200;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typeSpeed = 400;
+    }
+
+    setTimeout(typeRole, typeSpeed);
+  }
+
+  typeRole();
+}
 
 

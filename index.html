@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Rayen Mrad - Personal Portfolio</title>
 
   <!--
     - favicon
   -->
-  <link rel="icon" href="./assets/images/new_logo.png" type="image/png">
+  <link rel="icon" href="./image-removebg-preview.png" type="image/png">
 
   <!--
     - custom css link
@@ -22,7 +22,9 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@700;800;900&family=Raleway:wght@700;800;900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -30,23 +32,79 @@
   <!-- Sticky Scroll Header with Dropdown Menu -->
   <header class="sticky-scroll-header" id="sticky-scroll-header">
     <div class="sticky-brand">
+      <div class="rm-logo-wrapper" title="RM Logo">
+        <img src="./assets/images/rm_logo_light.png" alt="RM Logo" class="rm-logo-img logo-light">
+        <img src="./assets/images/rm_logo_dark.png" alt="RM Logo" class="rm-logo-img logo-dark">
+      </div>
       <img src="./assets/images/p1.png" alt="Mrad Rayen" class="sticky-avatar">
       <span class="sticky-name">Mrad Rayen</span>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <!-- Blogs Dropdown Action -->
+      <div class="header-blog-dropdown-wrapper">
+        <button class="header-action-btn blog-dropdown-toggle" title="Explore Blogs">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          <span>Blogs</span>
+          <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon>
+        </button>
+        <div class="blog-dropdown-menu">
+          <a href="https://medium.com/@rayen.mrad" target="_blank" class="blog-dropdown-item">
+            <ion-icon name="logo-medium"></ion-icon>
+            <div>
+              <strong>Medium Account</strong>
+              <span>Articles &amp; Publications</span>
+            </div>
+          </a>
+          <a href="#" data-nav-target="certifications" data-scroll-to="technical-reports-section" class="blog-dropdown-item">
+            <ion-icon name="journal-outline"></ion-icon>
+            <div>
+              <strong>Technical Reports Section</strong>
+              <span>Explore All Engineering Reports</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Download CV Dropdown Action -->
+      <div class="header-cv-dropdown-wrapper">
+        <button class="header-action-btn cv-dropdown-toggle" title="Download CV">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <span>Resume</span>
+          <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon>
+        </button>
+        <div class="cv-dropdown-menu">
+          <a href="./assets/images/cv_in.pdf" target="_blank" download class="cv-dropdown-item">
+            <ion-icon name="hardware-chip-outline"></ion-icon>
+            <div>
+              <strong>AI Oriented CV</strong>
+              <span>ML, Computer Vision & Data Science</span>
+            </div>
+          </a>
+          <a href="./assets/images/cv_em (1).pdf" target="_blank" download class="cv-dropdown-item">
+            <ion-icon name="build-outline"></ion-icon>
+            <div>
+              <strong>Embedded Systems CV</strong>
+              <span>Robotics, IoT & Microcontrollers</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Theme Toggle Button -->
       <button class="theme-toggle-btn" data-theme-toggle title="Toggle Light/Dark Theme">
         <ion-icon name="moon-outline"></ion-icon>
       </button>
 
+      <!-- Page Selector Dropdown -->
       <div class="dropdown-nav-wrapper" id="dropdown-nav-wrapper">
         <button class="dropdown-nav-btn" id="dropdown-nav-btn">
-          <span id="current-page-label">About</span>
+          <span id="current-page-label">Home</span>
           <ion-icon name="chevron-down-outline"></ion-icon>
         </button>
         <ul class="dropdown-nav-menu" id="dropdown-nav-menu">
-          <li class="dropdown-nav-item active" data-nav-target="about">About</li>
-          <li class="dropdown-nav-item" data-nav-target="resume">Resume</li>
+          <li class="dropdown-nav-item active" data-nav-target="home">Home</li>
+          <li class="dropdown-nav-item" data-nav-target="resume">About</li>
           <li class="dropdown-nav-item" data-nav-target="projects">Projects</li>
           <li class="dropdown-nav-item" data-nav-target="extracurricular activities">Extracurricular Activities</li>
           <li class="dropdown-nav-item" data-nav-target="certifications">Certifications</li>
@@ -64,8 +122,72 @@
 
     <!-- Full-Screen 100vh Hero Landing Section -->
     <section class="hero-landing-section" id="hero-landing">
-      <!-- Theme Toggle Button top right -->
-      <div style="position: absolute; top: 30px; right: 30px; z-index: 20;">
+      <!-- Big Watermark Text Behind Photo -->
+      <div class="hero-bg-watermark" aria-hidden="true">
+        <span>RAYEN MRAD</span>
+      </div>
+
+      <!-- RM Logo Top Left Corner -->
+      <div class="hero-top-left-logo">
+        <div class="rm-logo-wrapper" title="RM Logo">
+          <img src="./assets/images/rm_logo_light.png" alt="RM Logo" class="rm-logo-img logo-light">
+          <img src="./assets/images/rm_logo_dark.png" alt="RM Logo" class="rm-logo-img logo-dark">
+        </div>
+      </div>
+
+      <!-- Header Actions Top Right -->
+      <div style="position: absolute; top: 30px; right: 30px; z-index: 20;" class="header-actions-group">
+        <!-- Blogs Dropdown Action -->
+        <div class="header-blog-dropdown-wrapper">
+          <button class="header-action-btn blog-dropdown-toggle" title="Explore Blogs">
+            <ion-icon name="newspaper-outline"></ion-icon>
+            <span>Blogs</span>
+            <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon>
+          </button>
+          <div class="blog-dropdown-menu">
+            <a href="https://medium.com/@rayen.mrad" target="_blank" class="blog-dropdown-item">
+              <ion-icon name="logo-medium"></ion-icon>
+              <div>
+                <strong>Medium Account</strong>
+                <span>Articles &amp; Publications</span>
+              </div>
+            </a>
+            <a href="#" data-nav-target="certifications" data-scroll-to="technical-reports-section" class="blog-dropdown-item">
+              <ion-icon name="journal-outline"></ion-icon>
+              <div>
+                <strong>Technical Reports Section</strong>
+                <span>Explore All Engineering Reports</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Download CV Dropdown Action -->
+        <div class="header-cv-dropdown-wrapper">
+          <button class="header-action-btn cv-dropdown-toggle" title="Download CV">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>Resume</span>
+            <ion-icon name="chevron-down-outline" style="font-size: 12px;"></ion-icon>
+          </button>
+          <div class="cv-dropdown-menu">
+            <a href="./assets/images/cv_in.pdf" target="_blank" download class="cv-dropdown-item">
+              <ion-icon name="hardware-chip-outline"></ion-icon>
+              <div>
+                <strong>AI Oriented CV</strong>
+                <span>ML, Computer Vision & Data Science</span>
+              </div>
+            </a>
+            <a href="./assets/images/cv_em (1).pdf" target="_blank" download class="cv-dropdown-item">
+              <ion-icon name="build-outline"></ion-icon>
+              <div>
+                <strong>Embedded Systems CV</strong>
+                <span>Robotics, IoT & Microcontrollers</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button -->
         <button class="theme-toggle-btn" data-theme-toggle title="Toggle Light/Dark Theme">
           <ion-icon name="moon-outline"></ion-icon>
         </button>
@@ -73,12 +195,12 @@
 
       <!-- Vertical Left Navigation Bar -->
       <div class="hero-vertical-nav">
-        <button class="hero-vertical-link active" data-nav-target="about">
-          <span>About</span>
+        <button class="hero-vertical-link active" data-nav-target="home">
+          <span>Home</span>
           <ion-icon name="arrow-forward-outline"></ion-icon>
         </button>
         <button class="hero-vertical-link" data-nav-target="resume">
-          <span>Resume</span>
+          <span>About</span>
           <ion-icon name="arrow-forward-outline"></ion-icon>
         </button>
         <button class="hero-vertical-link" data-nav-target="projects">
@@ -113,7 +235,12 @@
         </figure>
 
         <h1 class="hero-name">Mrad Rayen</h1>
-        <p class="hero-title">Industrial IT Student & Automation Engineer</p>
+
+        <div class="hero-typewriter-container">
+          <ion-icon name="code-slash-outline"></ion-icon>
+          <span class="typewriter-text" id="typewriter-text"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
 
         <ul class="hero-social-list">
           <li class="social-item">
@@ -155,190 +282,221 @@
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <!--
+        - #HOME
+      -->
+
+      <article class="about active" data-page="home">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title">Home</h2>
         </header>
 
-        <section class="about-text">
-          <p>
-            I’m a fourth-year Industrial and Automation Computing student at INSAT, driven by a passion for applying my
-            knowledge to tackle real-world challenges.I thrive on the dynamic nature of this field and am committed to
-            continuously honing my skills to make meaningful contributions to the world of technology.
+        <!-- Box 1: About Me -->
+        <section class="home-box home-about-box">
+          <div class="box-header">
+            <div class="icon-box">
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <h3 class="h3 box-title">About Me</h3>
+          </div>
+          <p class="home-about-text">
+            Final-year Industrial & Automation Computing student at INSAT, specializing in
+            applied machine learning through hands-on projects spanning anomaly detection,
+            ensemble modeling, and real-time ML systems. Seeking an ML internship to apply
+            and deepen this experience on production-scale problems.
           </p>
-
-
         </section>
 
-        <!--
-          - resumes
-        -->
+        <!-- Box 2: Stats & Highlights Grid (4 Animated Number Counters) -->
+        <section class="home-box home-stats-box">
+          <div class="box-header">
+            <div class="icon-box">
+              <ion-icon name="stats-chart-outline"></ion-icon>
+            </div>
+            <h3 class="h3 box-title">Stats & Highlights</h3>
+          </div>
 
-        <section class="service">
+          <div class="stats-grid">
+            <div class="stat-card" data-nav-target="resume" data-scroll-to="experience-section">
+              <div class="stat-icon-wrapper">
+                <ion-icon name="briefcase-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <div>
+                  <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+                </div>
+                <p class="stat-label">Internships</p>
+              </div>
+              <div class="stat-explore-link">
+                <span>Explore Internships</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
 
-          <h3 class="h3 service-title">My Resumes</h3>
+            <div class="stat-card" data-nav-target="projects">
+              <div class="stat-icon-wrapper">
+                <ion-icon name="code-slash-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <div>
+                  <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                </div>
+                <p class="stat-label">Projects</p>
+              </div>
+              <div class="stat-explore-link">
+                <span>Explore Projects</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+
+            <div class="stat-card blog-dropdown-wrapper" role="button" tabindex="0" aria-label="Open blogs menu">
+              <div class="stat-icon-wrapper">
+                <ion-icon name="newspaper-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <div>
+                  <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                </div>
+                <p class="stat-label">Blogs</p>
+              </div>
+
+              <div class="stat-blog-menu">
+                <a href="https://medium.com/@rayen.mrad" target="_blank" class="stat-blog-item">
+                  <ion-icon name="logo-medium"></ion-icon>
+                  <div>
+                    <strong>Medium Account</strong>
+                    <span>Articles &amp; Publications</span>
+                  </div>
+                </a>
+                <a href="#" data-nav-target="certifications" data-scroll-to="technical-reports-section" class="stat-blog-item">
+                  <ion-icon name="journal-outline"></ion-icon>
+                  <div>
+                    <strong>Technical Reports Section</strong>
+                    <span>Explore All Engineering Reports</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="stat-card" data-nav-target="extracurricular activities" role="button" tabindex="0" aria-label="Explore voluntary experience">
+              <div class="stat-icon-wrapper">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <div>
+                  <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+                </div>
+                <p class="stat-label">Voluntary Experience</p>
+              </div>
+              <div class="stat-explore-link">
+                <span>Explore Voluntary</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Box 3: What I'm Doing -->
+        <section class="home-box home-services-box">
+          <div class="box-header">
+            <div class="icon-box">
+              <ion-icon name="rocket-outline"></ion-icon>
+            </div>
+            <h3 class="h3 box-title">What I'm Doing</h3>
+          </div>
 
           <ul class="service-list">
 
             <li class="service-item">
-
-              <div class="service-icon-box">
-                <ion-icon name="document-text-outline" style="font-size: 35px; color: var(--vegas-gold);"></ion-icon>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">AI Oriented CV</h4>
-                <p class="service-item-text" style="margin-bottom: 5px;">Specialized in Machine Learning, Computer Vision & Data Science.</p>
-                <a href="./assets/images/cv_in.pdf" target="_blank" class="cv-card-btn">
-                  <ion-icon name="download-outline"></ion-icon>
-                  <span>View / Download CV</span>
-                </a>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <ion-icon name="hardware-chip-outline" style="font-size: 35px; color: var(--vegas-gold);"></ion-icon>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Embedded Systems CV</h4>
-                <p class="service-item-text" style="margin-bottom: 5px;">Specialized in Robotics, Automation, Microcontrollers & IoT.</p>
-                <a href="./assets/images/cv_em (1).pdf" target="_blank" class="cv-card-btn">
-                  <ion-icon name="download-outline"></ion-icon>
-                  <span>View / Download CV</span>
-                </a>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
               <div class="service-icon-box">
                 <img src="./assets/images/icon-design.svg" alt="studying icon" width="40">
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Studying</h4>
-
                 <p class="service-item-text">
                   Industrial and Automation Computing at INSAT.
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
                 <img src="./assets/images/icon-dev.svg" alt="learning icon" width="40">
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Learning</h4>
-
                 <p class="service-item-text">
                   Passionate about deep learning and currently learning it.
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
                 <ion-icon name="code-working-outline" style="font-size: 40px; color: var(--vegas-gold);"></ion-icon>
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Building Projects</h4>
-
                 <p class="service-item-text">
                   Developing innovative solutions in AI, computer vision, and embedded systems.
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
                 <img src="./assets/images/copywriting.png" alt="writing icon" width="40">
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Writing</h4>
-
                 <p class="service-item-text">
                   Writing articles on Medium.
                 </p>
               </div>
-
             </li>
 
           </ul>
-
         </section>
 
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
+        <!-- Box 4: Testimonials -->
+        <section class="home-box home-testimonials-box">
+          <div class="box-header">
+            <div class="icon-box">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+            <h3 class="h3 box-title">Testimonials</h3>
+          </div>
 
           <ul class="testimonials-list has-scrollbar">
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Abdallah Ajilani</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
                     Rayen was hired to create a corporate identity. We were very pleased with the work done.He has a
-                    lot of experience
-                    and always tends to impress us with every modification in the plateform.He is always focused on the
+                    lot of experience and always tends to impress us with every modification in the plateform.He is
+                    always focused on the
                     problem and tends to find the Solution.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
-
                 <figure class="testimonials-avatar-box">
                   <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
                 </figure>
-
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Soumaya Bouchemi</h4>
-
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
                     Rayen worked on the data analysis part of our project. He is very professional and delivers the work
@@ -346,58 +504,11 @@
                     complex datasets. I highly recommend him for any data-related tasks.
                   </p>
                 </div>
-
               </div>
             </li>
 
           </ul>
-
         </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Abdallah Ajilani</h4>
-
-              <time datetime="2025-10-25">25 October 2025</time>
-
-              <div data-modal-text>
-                <p>
-                  Rayen was hired to create a corporate identity. We were very pleased with the work done.He has a
-                  lot of experience
-                  and always tends to impress us with every modification in the plateform.He is always focused on the
-                  problem and tends to find the Solution.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
 
       </article>
 
@@ -412,7 +523,7 @@
       <article class="resume" data-page="resume">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title">About</h2>
         </header>
 
         <section class="timeline">
@@ -459,7 +570,7 @@
 
         </section>
 
-        <section class="timeline">
+        <section class="timeline" id="experience-section">
 
           <div class="title-wrapper">
             <div class="icon-box">
@@ -473,15 +584,19 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web Development and AI Intern — Welyne (Collab with SynapsePulse Inc.)</h4>
+              <h4 class="h4 timeline-item-title">Web Development and AI Intern — Welyne (Collab with SynapsePulse Inc.)
+              </h4>
 
               <span>Oct. 2025 — Jan. 2026</span>
 
               <div class="timeline-text">
                 <ul>
-                  <li><strong>NFL Telemetry Research:</strong> Conducted comprehensive research on NFL tracking systems, wearable sensors, and biometrics.</li>
-                  <li><strong>Fatigue Tracking Platform:</strong> Designed an analytics platform tracking player metrics including HR, RR intervals, velocity, and accuracy.</li>
-                  <li><strong>Machine Learning Classifier:</strong> Trained a predictive ML model to classify 4 levels of fatigue, enabling athletic staff to optimize player rotation and safety.</li>
+                  <li><strong>NFL Telemetry Research:</strong> Conducted comprehensive research on NFL tracking systems,
+                    wearable sensors, and biometrics.</li>
+                  <li><strong>Fatigue Tracking Platform:</strong> Designed an analytics platform tracking player metrics
+                    including HR, RR intervals, velocity, and accuracy.</li>
+                  <li><strong>Machine Learning Classifier:</strong> Trained a predictive ML model to classify 4 levels
+                    of fatigue, enabling athletic staff to optimize player rotation and safety.</li>
                 </ul>
               </div>
 
@@ -495,8 +610,10 @@
 
               <div class="timeline-text">
                 <ul>
-                  <li><strong>Medical Image Processing:</strong> Developed Python algorithms to enhance radiology and medical imaging resolution and contrast.</li>
-                  <li><strong>Clinical Decision Support:</strong> Created specialized image processing tools assisting oncologists in early cancer tracking and diagnostic accuracy.</li>
+                  <li><strong>Medical Image Processing:</strong> Developed Python algorithms to enhance radiology and
+                    medical imaging resolution and contrast.</li>
+                  <li><strong>Clinical Decision Support:</strong> Created specialized image processing tools assisting
+                    oncologists in early cancer tracking and diagnostic accuracy.</li>
                 </ul>
               </div>
 
@@ -510,7 +627,8 @@
 
               <div class="timeline-text">
                 <ul>
-                  <li><strong>Client Solutions:</strong> Created custom visual concepts, brand identities, and software applications aligned with client specifications.</li>
+                  <li><strong>Client Solutions:</strong> Created custom visual concepts, brand identities, and software
+                    applications aligned with client specifications.</li>
                 </ul>
               </div>
 
@@ -524,7 +642,8 @@
 
               <div class="timeline-text">
                 <ul>
-                  <li><strong>Network Operations:</strong> Supported field engineers with telecom infrastructure maintenance, hardware diagnostics, and service operations.</li>
+                  <li><strong>Network Operations:</strong> Supported field engineers with telecom infrastructure
+                    maintenance, hardware diagnostics, and service operations.</li>
                 </ul>
               </div>
 
@@ -534,162 +653,309 @@
 
         </section>
 
-        <section class="skill">
+        <section class="skills-section">
 
-          <h3 class="h3 skills-title">My skills</h3>
+          <h3 class="h3 skills-title" style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+            <ion-icon name="construct-outline" style="color: var(--orange-yellow-crayola); font-size: 26px;"></ion-icon>
+            <span>Technical Skills &amp; Expertise</span>
+          </h3>
 
-          <!-- Programming Languages -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Programming</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">Python</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">C/C++</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Java</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">JavaScript/TypeScript</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">SQL</h5>
-              </li>
-            </ul>
-          </div>
+          <div class="skills-boxes-grid">
 
-          <!-- Artificial Intelligence -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Artificial Intelligence</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">Machine Learning</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Deep Learning</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Computer Vision</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Predictive Modeling</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Model Evaluation</h5>
-              </li>
-            </ul>
-          </div>
+            <!-- Box 1: Machine Learning & Deep Learning -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="hardware-chip-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Machine &amp; Deep Learning</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/pytorch/ee4c2c" alt="PyTorch">
+                  </div>
+                  <span class="skill-name">PyTorch</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/tensorflow/ff6f00" alt="TensorFlow">
+                  </div>
+                  <span class="skill-name">TensorFlow</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/keras/d00000" alt="Keras">
+                  </div>
+                  <span class="skill-name">Keras</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/scikitlearn/f7931e" alt="Scikit-Learn">
+                  </div>
+                  <span class="skill-name">Scikit-Learn</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/huggingface/ffd21e" alt="Hugging Face">
+                  </div>
+                  <span class="skill-name">Hugging Face</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="git-network-outline" style="color: #ff6f00;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Transformers &amp; CNNs</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="game-controller-outline" style="color: #00e676;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Gymnasium (RL)</span>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Data Analysis -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Data Analysis</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">Data Cleaning</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Data Preprocessing</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Data Visualization</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Statistical Analysis</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Feature Engineering</h5>
-              </li>
-            </ul>
-          </div>
+            <!-- Box 2: Computer Vision & AI Analytics -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Computer Vision &amp; AI</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/opencv/5c3ee8" alt="OpenCV">
+                  </div>
+                  <span class="skill-name">OpenCV</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/nvidia/76b900" alt="CUDA / Edge AI">
+                  </div>
+                  <span class="skill-name">CUDA &amp; Edge AI</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="pulse-outline" style="color: #ff3d00;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Telemetry &amp; Biometrics</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="analytics-outline" style="color: #29b6f6;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Time Series &amp; Predictive</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="scan-outline" style="color: #ab47bc;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Medical Image Processing</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="speedometer-outline" style="color: #ffca28;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Model Optimization</span>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Tools -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Tools</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">GitHub</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Jupyter Notebook</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Streamlit</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">VS Code</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">SolidWorks</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Fritzing</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Proteus</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Wokwi</h5>
-              </li>
-            </ul>
-          </div>
+            <!-- Box 3: Data Science & Analytics -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="bar-chart-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Data Science &amp; Analytics</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/python/ffd43b" alt="Python">
+                  </div>
+                  <span class="skill-name">Python Stack</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/pandas/150458" alt="Pandas">
+                  </div>
+                  <span class="skill-name">Pandas</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/numpy/013243" alt="NumPy">
+                  </div>
+                  <span class="skill-name">NumPy &amp; SciPy</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/postgresql/4169e1" alt="SQL">
+                  </div>
+                  <span class="skill-name">SQL Databases</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="pie-chart-outline" style="color: #26a69a;"></ion-icon>
+                  </div>
+                  <span class="skill-name">EDA &amp; Viz</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="calculator-outline" style="color: #ff7043;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Statistical Analysis</span>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Embedded Systems -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Embedded Systems</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">Embedded C/C++</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Electronics</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Sensors & Actuators</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Automation</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Robotics</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Real-Time Data Acquisition</h5>
-              </li>
-            </ul>
-          </div>
+            <!-- Box 4: Embedded Systems & Automation -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="cpu-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Embedded Systems &amp; MCU</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/cplusplus/00599c" alt="C/C++">
+                  </div>
+                  <span class="skill-name">C / C++ &amp; Embedded C</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/arduino/00979d" alt="Arduino">
+                  </div>
+                  <span class="skill-name">Arduino &amp; ESP32</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/raspberrypi/c51a4a" alt="Raspberry Pi">
+                  </div>
+                  <span class="skill-name">Raspberry Pi &amp; STM32</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="hardware-chip-outline" style="color: #ffa726;"></ion-icon>
+                  </div>
+                  <span class="skill-name">RTOS &amp; Microcontrollers</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="radio-outline" style="color: #26c6da;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Sensors &amp; Wireless IoT</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="cog-outline" style="color: #ef5350;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Industrial Automation</span>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Microcontrollers -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Microcontrollers</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">ESP32</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Arduino</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">STM32</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Raspberry Pi</h5>
-              </li>
-            </ul>
-          </div>
+            <!-- Box 5: Robotics & Engineering Tools -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="planet-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Robotics &amp; Simulation</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/ros/22314e" alt="ROS">
+                  </div>
+                  <span class="skill-name">ROS &amp; ROS 2</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="cube-outline" style="color: #78909c;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Gazebo Simulation</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="shapes-outline" style="color: #da4453;"></ion-icon>
+                  </div>
+                  <span class="skill-name">SolidWorks (CAD)</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="flash-outline" style="color: #f6bb42;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Proteus &amp; Fritzing</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="laptop-outline" style="color: #4a89dc;"></ion-icon>
+                  </div>
+                  <span class="skill-name">Wokwi Simulator</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <ion-icon name="code-outline" style="color: #d770ad;"></ion-icon>
+                  </div>
+                  <span class="skill-name">MATLAB &amp; Simulink</span>
+                </li>
+              </ul>
+            </div>
 
-          <!-- Robotics Software Stack -->
-          <div class="skill-category">
-            <h4 class="h4 skill-category-title">Robotics Software Stack</h4>
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <h5 class="h5">ROS 2</h5>
-              </li>
-              <li class="skills-item">
-                <h5 class="h5">Gazebo simulation environment</h5>
-              </li>
-            </ul>
+            <!-- Box 6: Software Engineering & MLOps -->
+            <div class="skills-box-card">
+              <div class="skills-box-header">
+                <div class="skills-box-icon">
+                  <ion-icon name="code-working-outline"></ion-icon>
+                </div>
+                <h4 class="h4 skills-box-title">Software &amp; MLOps Tools</h4>
+              </div>
+              <ul class="skills-badge-list">
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/git/f05032" alt="Git">
+                  </div>
+                  <span class="skill-name">Git &amp; GitHub</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/docker/2496ed" alt="Docker">
+                  </div>
+                  <span class="skill-name">Docker</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/linux/fcc624" alt="Linux">
+                  </div>
+                  <span class="skill-name">Linux &amp; Bash</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/streamlit/ff4b4b" alt="Streamlit">
+                  </div>
+                  <span class="skill-name">Streamlit Apps</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/jupyter/f37626" alt="Jupyter">
+                  </div>
+                  <span class="skill-name">Jupyter Notebooks</span>
+                </li>
+                <li class="skill-badge-item">
+                  <div class="skill-circle-icon">
+                    <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JS/TS">
+                  </div>
+                  <span class="skill-name">JS / Java Stack</span>
+                </li>
+              </ul>
+            </div>
+
           </div>
 
         </section>
@@ -876,7 +1142,8 @@
                   <img src="./assets/images/Capture d'écran 2026-04-06 222919.png"
                     alt="Machine Health Monitoring System" loading="lazy">
                 </figure>
-                <h3 class="project-title project-title--with-badge">Machine Health Monitoring System <span class="project-badge in-progress">In progress</span></h3>
+                <h3 class="project-title project-title--with-badge">Machine Health Monitoring System <span
+                    class="project-badge in-progress">In progress</span></h3>
                 <p class="project-category">Embedded systems</p>
                 <ul class="tech-tags-list">
                   <li class="tech-tag">STM32</li>
@@ -920,25 +1187,6 @@
                   <li class="tech-tag">Python</li>
                   <li class="tech-tag">OpenCV</li>
                   <li class="tech-tag">Computer Vision</li>
-                </ul>
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="computer vision">
-              <a href="./assets/images/rapport%20finale.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="document-text-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/Capture d'écran 2026-05-05 113030.png" alt="Quality Control System"
-                    loading="lazy">
-                </figure>
-                <h3 class="project-title">Quality Control System</h3>
-                <p class="project-category">Computer vision</p>
-                <ul class="tech-tags-list">
-                  <li class="tech-tag">Python</li>
-                  <li class="tech-tag">PyTorch</li>
-                  <li class="tech-tag">Industrial AI</li>
                 </ul>
               </a>
             </li>
@@ -1052,7 +1300,8 @@
               <h4 class="h4 timeline-item-title">Competitive Programming Contests Staff</h4>
               <span>Community & Contests</span>
               <div class="timeline-text">
-                <p>Contributed to national competitive programming initiatives, mentoring student programmers, problem setting, and enhancing contest quality across Tunisia.</p>
+                <p>Contributed to national competitive programming initiatives, mentoring student programmers, problem
+                  setting, and enhancing contest quality across Tunisia.</p>
               </div>
             </li>
 
@@ -1060,7 +1309,8 @@
               <h4 class="h4 timeline-item-title">Leader, Tunisian Scouts</h4>
               <span>Leadership & Team Building</span>
               <div class="timeline-text">
-                <p>Spearheaded youth development programs, organized community service projects, and led outdoor team-building workshops across Monastir.</p>
+                <p>Spearheaded youth development programs, organized community service projects, and led outdoor
+                  team-building workshops across Monastir.</p>
               </div>
             </li>
 
@@ -1068,7 +1318,8 @@
               <h4 class="h4 timeline-item-title">Organizing Committee Member, National Robotics Weekend</h4>
               <span>Administrative Affairs Manager</span>
               <div class="timeline-text">
-                <p>Coordinated nationwide participant registrations, administrative workflows, and event logistics for one of Tunisia's largest annual robotics competitions.</p>
+                <p>Coordinated nationwide participant registrations, administrative workflows, and event logistics for
+                  one of Tunisia's largest annual robotics competitions.</p>
               </div>
             </li>
 
@@ -1076,7 +1327,8 @@
               <h4 class="h4 timeline-item-title">Robotics Workshops Instructor</h4>
               <span>Tunisian Scouts (JOTA-JOTI & Scout Day)</span>
               <div class="timeline-text">
-                <p>Delivered interactive STEM & robotics workshops during national Scout events, training young participants in basic electronics and hardware assembly.</p>
+                <p>Delivered interactive STEM & robotics workshops during national Scout events, training young
+                  participants in basic electronics and hardware assembly.</p>
               </div>
             </li>
 
@@ -1084,7 +1336,8 @@
               <h4 class="h4 timeline-item-title">Instructor, Moataz Mdimagh Robotics Club</h4>
               <span>STEM Education</span>
               <div class="timeline-text">
-                <p>Taught children fundamental robotics concepts, sensor integration, and block programming through hands-on creative projects.</p>
+                <p>Taught children fundamental robotics concepts, sensor integration, and block programming through
+                  hands-on creative projects.</p>
               </div>
             </li>
 
@@ -1092,7 +1345,8 @@
               <h4 class="h4 timeline-item-title">General Secretary, ACM Club INSAT</h4>
               <span>Operations & Executive Committee</span>
               <div class="timeline-text">
-                <p>Oversee club administrative operations, coordinate technical workshops, and drive student engagement in algorithmic problem solving.</p>
+                <p>Oversee club administrative operations, coordinate technical workshops, and drive student engagement
+                  in algorithmic problem solving.</p>
               </div>
             </li>
 
@@ -1111,6 +1365,189 @@
         <header>
           <h2 class="h2 article-title">Certifications</h2>
         </header>
+
+        <!-- Recommendation Letters Section -->
+        <section class="recommendations-section" style="margin-bottom: 40px;">
+          <h3 class="h3" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <ion-icon name="ribbon-outline" style="color: var(--orange-yellow-crayola); font-size: 24px;"></ion-icon>
+            <span>Recommendation Letters</span>
+          </h3>
+
+          <div class="recommendations-grid">
+
+            <div class="recommendation-card">
+              <div class="recommendation-top">
+                <div class="recommendation-badge">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                  <span>Official Endorsement</span>
+                </div>
+                <span class="recommendation-date">2026</span>
+              </div>
+
+              <h4 class="h4 recommendation-org">Welyne &amp; SynapsePulse Inc.</h4>
+              <p class="recommendation-role">AI &amp; Engineering Supervisor</p>
+
+              <blockquote class="recommendation-quote">
+                "Rayen demonstrated exceptional expertise in deep learning, telemetry analytics, and edge deployment
+                during his internship. His technical rigor and problem-solving drive are outstanding."
+              </blockquote>
+
+              <a href="./cerifs/data%20analyst%20in%20python%20certificate.pdf" target="_blank"
+                class="recommendation-btn">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>View Letter (PDF)</span>
+              </a>
+            </div>
+
+            <div class="recommendation-card">
+              <div class="recommendation-top">
+                <div class="recommendation-badge">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                  <span>Official Endorsement</span>
+                </div>
+                <span class="recommendation-date">2025</span>
+              </div>
+
+              <h4 class="h4 recommendation-org">Get Wireless</h4>
+              <p class="recommendation-role">Technical Director &amp; IoT Lead</p>
+
+              <blockquote class="recommendation-quote">
+                "Rayen displayed impressive proficiency in C/C++ microcontrollers, RTOS, and wireless protocols. His
+                dedication to hardware-software co-design makes him a standout engineer."
+              </blockquote>
+
+              <a href="./cerifs/python-data-fundamentals.pdf" target="_blank" class="recommendation-btn">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>View Letter (PDF)</span>
+              </a>
+            </div>
+
+            <div class="recommendation-card">
+              <div class="recommendation-top">
+                <div class="recommendation-badge academic">
+                  <ion-icon name="school-outline"></ion-icon>
+                  <span>Academic Reference</span>
+                </div>
+                <span class="recommendation-date">2024</span>
+              </div>
+
+              <h4 class="h4 recommendation-org">INSAT Academic Faculty</h4>
+              <p class="recommendation-role">Department of Industrial IT &amp; Automation</p>
+
+              <blockquote class="recommendation-quote">
+                "Rayen is among the top-tier students in Industrial IT and Automation. He consistently delivers
+                high-standard projects with exemplary analytical and practical capabilities."
+              </blockquote>
+
+              <a href="./cerifs/My%20Learning%20_%20NVIDIA.pdf" target="_blank" class="recommendation-btn">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <span>View Reference (PDF)</span>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Technical Reports Section -->
+        <section class="technical-reports-section" id="technical-reports-section" style="margin-bottom: 40px; margin-top: 35px;">
+          <h3 class="h3" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <ion-icon name="journal-outline" style="color: var(--orange-yellow-crayola); font-size: 24px;"></ion-icon>
+            <span>Technical &amp; Internship Reports</span>
+          </h3>
+
+          <div class="technical-reports-grid">
+
+            <!-- Report 1: Summer Internship Report 2025 -->
+            <div class="technical-report-card">
+              <div class="report-header">
+                <div class="report-badge">
+                  <ion-icon name="document-text-outline"></ion-icon>
+                  <span>Internship Report (PDF)</span>
+                </div>
+                <span class="report-date">2025</span>
+              </div>
+
+              <h4 class="h4 report-title">Rapport de Stage d'Été IIA 3 (Get Wireless)</h4>
+              <p class="report-subtitle">Medical Image Processing &amp; Contrast Enhancement</p>
+
+              <p class="report-description">
+                Comprehensive technical report covering the design, development, and clinical evaluation of Python-based medical image enhancement algorithms for radiology and oncology diagnostic support.
+              </p>
+
+              <div class="report-footer">
+                <span class="report-filesize">
+                  <ion-icon name="attach-outline"></ion-icon> 700 KB
+                </span>
+                <a href="./technical_report/Rapport_Stage_Ete_2025_IIA_3_Mrad_Rayen.pdf" target="_blank" class="report-download-btn">
+                  <ion-icon name="arrow-down-circle-outline"></ion-icon>
+                  <span>Read Report</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Report 3: Machine Health & Predictive Maintenance -->
+            <div class="technical-report-card">
+              <div class="report-header">
+                <div class="report-badge">
+                  <ion-icon name="construct-outline"></ion-icon>
+                  <span>Technical Report (PDF)</span>
+                </div>
+                <span class="report-date">2025</span>
+              </div>
+
+              <h4 class="h4 report-title">Machine Health &amp; Predictive Maintenance</h4>
+              <p class="report-subtitle">Industrial IoT &amp; Vibration Diagnostics</p>
+
+              <p class="report-description">
+                Technical report on industrial machine condition monitoring using accelerometers, FFT frequency spectrum analysis, and anomaly detection algorithms for preventative maintenance.
+              </p>
+
+              <div class="report-footer">
+                <span class="report-filesize">
+                  <ion-icon name="attach-outline"></ion-icon> 2.3 MB
+                </span>
+                <a href="./technical_report/machine_health_monitoring.pdf" target="_blank" class="report-download-btn">
+                  <ion-icon name="arrow-down-circle-outline"></ion-icon>
+                  <span>Read Report</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Report 4: Automated Quality Control System -->
+            <div class="technical-report-card">
+              <div class="report-header">
+                <div class="report-badge">
+                  <ion-icon name="scan-outline"></ion-icon>
+                  <span>System Report (PDF)</span>
+                </div>
+                <span class="report-date">2024</span>
+              </div>
+
+              <h4 class="h4 report-title">Automated Quality Control System Report</h4>
+              <p class="report-subtitle">Computer Vision &amp; Conveyor Inspection</p>
+
+              <p class="report-description">
+                Detailed engineering specification and performance evaluation for high-speed industrial product defect detection using OpenCV camera feeds and real-time rejection actuators.
+              </p>
+
+              <div class="report-footer">
+                <span class="report-filesize">
+                  <ion-icon name="attach-outline"></ion-icon> 6.5 MB
+                </span>
+                <a href="./technical_report/quality_control_system.pdf" target="_blank" class="report-download-btn">
+                  <ion-icon name="arrow-down-circle-outline"></ion-icon>
+                  <span>Read Report</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <h3 class="h3" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+          <ion-icon name="document-text-outline" style="color: var(--orange-yellow-crayola); font-size: 24px;"></ion-icon>
+          <span>Certifications &amp; Reports</span>
+        </h3>
 
         <section class="certifications-slider">
           <ul class="certifications-list certifications-list--top">
@@ -1638,16 +2075,6 @@
               </div>
             </div>
 
-            <div class="contact-card">
-              <div class="contact-card-icon">
-                <ion-icon name="calendar-outline"></ion-icon>
-              </div>
-              <div class="contact-card-content">
-                <p class="contact-card-title">Birthday</p>
-                <p class="contact-card-text">January 25, 2004</p>
-              </div>
-            </div>
-
             <div class="contact-card" style="grid-column: 1 / -1;">
               <div class="contact-card-icon">
                 <ion-icon name="share-social-outline"></ion-icon>
@@ -1658,10 +2085,12 @@
                   <a href="https://github.com/fannen-prt1" target="_blank" class="contact-social-btn" title="GitHub">
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
-                  <a href="https://www.linkedin.com/in/rayenmrad/" target="_blank" class="contact-social-btn" title="LinkedIn">
+                  <a href="https://www.linkedin.com/in/rayenmrad/" target="_blank" class="contact-social-btn"
+                    title="LinkedIn">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
-                  <a href="https://www.facebook.com/Rayen.mr.2004" target="_blank" class="contact-social-btn" title="Facebook">
+                  <a href="https://www.facebook.com/Rayen.mr.2004" target="_blank" class="contact-social-btn"
+                    title="Facebook">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
                 </div>
@@ -1712,6 +2141,34 @@
 
 
 
+
+  <!-- Testimonials Modal -->
+  <div class="modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+    <section class="testimonials-modal">
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box">
+          <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+        </figure>
+        <img src="./assets/images/icon-quote.svg" alt="quote icon">
+      </div>
+
+      <div class="modal-content">
+        <h4 class="h3 modal-title" data-modal-title>Abdallah Ajilani</h4>
+        <time datetime="2025-10-25">25 October 2025</time>
+        <div data-modal-text>
+          <p>
+            Rayen was hired to create a corporate identity. We were very pleased with the work done. He has a
+            lot of experience and always tends to impress us with every modification in the platform.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!--
     - custom js link
