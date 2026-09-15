@@ -22,10 +22,39 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- Sticky Scroll Header with Dropdown Menu -->
+  <header class="sticky-scroll-header" id="sticky-scroll-header">
+    <div class="sticky-brand">
+      <img src="./assets/images/p1.png" alt="Mrad Rayen" class="sticky-avatar">
+      <span class="sticky-name">Mrad Rayen</span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <button class="theme-toggle-btn" data-theme-toggle title="Toggle Light/Dark Theme">
+        <ion-icon name="moon-outline"></ion-icon>
+      </button>
+
+      <div class="dropdown-nav-wrapper" id="dropdown-nav-wrapper">
+        <button class="dropdown-nav-btn" id="dropdown-nav-btn">
+          <span id="current-page-label">About</span>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </button>
+        <ul class="dropdown-nav-menu" id="dropdown-nav-menu">
+          <li class="dropdown-nav-item active" data-nav-target="about">About</li>
+          <li class="dropdown-nav-item" data-nav-target="resume">Resume</li>
+          <li class="dropdown-nav-item" data-nav-target="projects">Projects</li>
+          <li class="dropdown-nav-item" data-nav-target="extracurricular activities">Extracurricular Activities</li>
+          <li class="dropdown-nav-item" data-nav-target="certifications">Certifications</li>
+          <li class="dropdown-nav-item" data-nav-target="contact">Contact</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
   <!--
     - #MAIN
@@ -33,168 +62,90 @@
 
   <main>
 
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/p1.png" alt="Mrad Rayen" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Mrad Rayen">Mrad Rayen</h1>
-          <p class="title">Industrial IT student</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
+    <!-- Full-Screen 100vh Hero Landing Section -->
+    <section class="hero-landing-section" id="hero-landing">
+      <!-- Theme Toggle Button top right -->
+      <div style="position: absolute; top: 30px; right: 30px; z-index: 20;">
+        <button class="theme-toggle-btn" data-theme-toggle title="Toggle Light/Dark Theme">
+          <ion-icon name="moon-outline"></ion-icon>
         </button>
-
       </div>
 
-      <div class="sidebar-info_more">
+      <!-- Vertical Left Navigation Bar -->
+      <div class="hero-vertical-nav">
+        <button class="hero-vertical-link active" data-nav-target="about">
+          <span>About</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+        <button class="hero-vertical-link" data-nav-target="resume">
+          <span>Resume</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+        <button class="hero-vertical-link" data-nav-target="projects">
+          <span>Projects</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+        <button class="hero-vertical-link" data-nav-target="extracurricular activities">
+          <span>Activities</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+        <button class="hero-vertical-link" data-nav-target="certifications">
+          <span>Certifications</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+        <button class="hero-vertical-link" data-nav-target="contact">
+          <span>Contact</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+      </div>
 
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+      <!-- Center Rotating Avatar & Profile Info -->
+      <div class="hero-center-box">
+        <figure class="avatar-box" title="Rotating avatar cadre">
+          <div class="avatar-inner">
+            <div class="avatar-face front">
+              <img src="./assets/images/p1.png" alt="Mrad Rayen Photo">
             </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a class="contact-link">rayen.mrad@insat.ucar.tn</a>
+            <div class="avatar-face back">
+              <img src="./assets/images/avatar.jpg" alt="Mrad Rayen Avatar">
             </div>
+          </div>
+        </figure>
 
-          </li>
+        <h1 class="hero-name">Mrad Rayen</h1>
+        <p class="hero-title">Industrial IT Student & Automation Engineer</p>
 
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a class="contact-link">+216 93 471 084</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="2004-01-25">January 25, 2004</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Teboulba, Monastir, Tunisia</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
+        <ul class="hero-social-list">
           <li class="social-item">
-            <a href="https://www.facebook.com/Rayen.mr.2004" target="_blank" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/fannen-prt1" target="_blank" class="social-link">
+            <a href="https://github.com/fannen-prt1" target="_blank" class="social-link" title="GitHub">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/rayenmrad/" target="_blank" class="social-link">
+            <a href="https://www.linkedin.com/in/rayenmrad/" target="_blank" class="social-link" title="LinkedIn">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
-
+          <li class="social-item">
+            <a href="https://www.facebook.com/Rayen.mr.2004" target="_blank" class="social-link" title="Facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
         </ul>
-
       </div>
 
-    </aside>
-
-
-
-
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-down-indicator" id="scroll-down-btn">
+        <span>Scroll down to explore</span>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+    </section>
 
     <!--
       - #main-content
     -->
 
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Extracurricular Activities</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Certifications</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
+    <div class="main-content" id="main-content">
 
 
 
@@ -238,11 +189,11 @@
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">AI Oriented CV</h4>
-
-                <p class="service-item-text">
-                  <a href="./assets/images/cv_in.pdf" target="_blank"
-                    style="color: var(--vegas-gold); text-decoration: underline;">Click here to View / Download</a>
-                </p>
+                <p class="service-item-text" style="margin-bottom: 5px;">Specialized in Machine Learning, Computer Vision & Data Science.</p>
+                <a href="./assets/images/cv_in.pdf" target="_blank" class="cv-card-btn">
+                  <ion-icon name="download-outline"></ion-icon>
+                  <span>View / Download CV</span>
+                </a>
               </div>
 
             </li>
@@ -250,16 +201,16 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <ion-icon name="document-text-outline" style="font-size: 35px; color: var(--vegas-gold);"></ion-icon>
+                <ion-icon name="hardware-chip-outline" style="font-size: 35px; color: var(--vegas-gold);"></ion-icon>
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Embedded Systems CV</h4>
-
-                <p class="service-item-text">
-                  <a href="./assets/images/cv_em (1).pdf" target="_blank"
-                    style="color: var(--vegas-gold); text-decoration: underline;">Click here to View / Download</a>
-                </p>
+                <p class="service-item-text" style="margin-bottom: 5px;">Specialized in Robotics, Automation, Microcontrollers & IoT.</p>
+                <a href="./assets/images/cv_em (1).pdf" target="_blank" class="cv-card-btn">
+                  <ion-icon name="download-outline"></ion-icon>
+                  <span>View / Download CV</span>
+                </a>
               </div>
 
             </li>
@@ -522,30 +473,32 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web Development and AI Intern — Welyne (Collab with SynapsePulse Inc.)
-              </h4>
+              <h4 class="h4 timeline-item-title">Web Development and AI Intern — Welyne (Collab with SynapsePulse Inc.)</h4>
 
               <span>Oct. 2025 — Jan. 2026</span>
 
-              <p class="timeline-text">
-                Conducted research about NFL systems, sensors, and data. Designed a platform to track NFL Players
-                Metrics (HR, RR intervals, speed, and accuracy) to predict their fatigue. Built an ML model to predict
-                one of four levels of fatigue, providing a quicker way to track players' fatigue to guarantee the best
-                performance of an NFL team.
-              </p>
+              <div class="timeline-text">
+                <ul>
+                  <li><strong>NFL Telemetry Research:</strong> Conducted comprehensive research on NFL tracking systems, wearable sensors, and biometrics.</li>
+                  <li><strong>Fatigue Tracking Platform:</strong> Designed an analytics platform tracking player metrics including HR, RR intervals, velocity, and accuracy.</li>
+                  <li><strong>Machine Learning Classifier:</strong> Trained a predictive ML model to classify 4 levels of fatigue, enabling athletic staff to optimize player rotation and safety.</li>
+                </ul>
+              </div>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Image Enhance Intern — Get Wireless</h4>
+              <h4 class="h4 timeline-item-title">Image Enhancement Intern — Get Wireless</h4>
 
               <span>June 2025 — July 2025</span>
 
-              <p class="timeline-text">
-                Developed a Python script to enhance radiology image quality through improving quality techniques.
-                Served a tool to help doctors track cancer by improving image quality.
-              </p>
+              <div class="timeline-text">
+                <ul>
+                  <li><strong>Medical Image Processing:</strong> Developed Python algorithms to enhance radiology and medical imaging resolution and contrast.</li>
+                  <li><strong>Clinical Decision Support:</strong> Created specialized image processing tools assisting oncologists in early cancer tracking and diagnostic accuracy.</li>
+                </ul>
+              </div>
 
             </li>
 
@@ -555,9 +508,11 @@
 
               <span>2024</span>
 
-              <p class="timeline-text">
-                Designed visual concepts for different clients based on their requirements.
-              </p>
+              <div class="timeline-text">
+                <ul>
+                  <li><strong>Client Solutions:</strong> Created custom visual concepts, brand identities, and software applications aligned with client specifications.</li>
+                </ul>
+              </div>
 
             </li>
 
@@ -567,10 +522,11 @@
 
               <span>2024</span>
 
-              <p class="timeline-text">
-                Assisted in technical and operational tasks within the telecom environment. Supported internal teams in
-                handling daily service-related and system maintenance activities.
-              </p>
+              <div class="timeline-text">
+                <ul>
+                  <li><strong>Network Operations:</strong> Supported field engineers with telecom infrastructure maintenance, hardware diagnostics, and service operations.</li>
+                </ul>
+              </div>
 
             </li>
 
@@ -846,6 +802,11 @@
                 </figure>
                 <h3 class="project-title">Simple Face Detection</h3>
                 <p class="project-category">Computer vision</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">OpenCV</li>
+                  <li class="tech-tag">Haar Cascade</li>
+                </ul>
               </a>
             </li>
 
@@ -859,6 +820,12 @@
                 </figure>
                 <h3 class="project-title">Groq Platform</h3>
                 <p class="project-category">AI</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">Groq API</li>
+                  <li class="tech-tag">LLM</li>
+                  <li class="tech-tag">Streamlit</li>
+                </ul>
               </a>
             </li>
 
@@ -872,6 +839,12 @@
                 </figure>
                 <h3 class="project-title">Leak Detection System</h3>
                 <p class="project-category">Embedded systems</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Embedded C</li>
+                  <li class="tech-tag">ESP32</li>
+                  <li class="tech-tag">Sensors</li>
+                  <li class="tech-tag">IoT</li>
+                </ul>
               </a>
             </li>
 
@@ -885,6 +858,12 @@
                 </figure>
                 <h3 class="project-title">NFL Fatigue Tracking System</h3>
                 <p class="project-category">AI</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">Machine Learning</li>
+                  <li class="tech-tag">Scikit-Learn</li>
+                  <li class="tech-tag">Biometrics</li>
+                </ul>
               </a>
             </li>
 
@@ -897,8 +876,14 @@
                   <img src="./assets/images/Capture d'écran 2026-04-06 222919.png"
                     alt="Machine Health Monitoring System" loading="lazy">
                 </figure>
-                <h3 class="project-title project-title--with-badge">Machine Health Monitoring System <span class="project-badge">In progress</span></h3>
+                <h3 class="project-title project-title--with-badge">Machine Health Monitoring System <span class="project-badge in-progress">In progress</span></h3>
                 <p class="project-category">Embedded systems</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">STM32</li>
+                  <li class="tech-tag">Vibration Sensors</li>
+                  <li class="tech-tag">Real-Time Monitoring</li>
+                  <li class="tech-tag">C/C++</li>
+                </ul>
               </a>
             </li>
 
@@ -912,6 +897,11 @@
                 </figure>
                 <h3 class="project-title">Study Hub</h3>
                 <p class="project-category">AI</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">Optimization</li>
+                  <li class="tech-tag">Streamlit</li>
+                </ul>
               </a>
             </li>
 
@@ -926,6 +916,11 @@
                 </figure>
                 <h3 class="project-title">Coin Recognition Model</h3>
                 <p class="project-category">Computer vision</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">OpenCV</li>
+                  <li class="tech-tag">Computer Vision</li>
+                </ul>
               </a>
             </li>
 
@@ -940,6 +935,11 @@
                 </figure>
                 <h3 class="project-title">Quality Control System</h3>
                 <p class="project-category">Computer vision</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">PyTorch</li>
+                  <li class="tech-tag">Industrial AI</li>
+                </ul>
               </a>
             </li>
 
@@ -953,9 +953,13 @@
                 </figure>
                 <h3 class="project-title">Barber Queue Optimization System</h3>
                 <p class="project-category">Web development</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">JavaScript</li>
+                  <li class="tech-tag">HTML/CSS</li>
+                  <li class="tech-tag">Algorithms</li>
+                </ul>
               </a>
             </li>
-
 
             <li class="project-item  active" data-filter-item data-category="simulation">
               <a href="https://github.com/fannen-prt1/supply_chain_simulation" target="_blank">
@@ -968,6 +972,11 @@
                 </figure>
                 <h3 class="project-title">Supply Chain Simulation System</h3>
                 <p class="project-category">Simulation</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Python</li>
+                  <li class="tech-tag">Simulation</li>
+                  <li class="tech-tag">Optimization</li>
+                </ul>
               </a>
             </li>
 
@@ -981,6 +990,11 @@
                 </figure>
                 <h3 class="project-title">Automated Warehouse System Programming</h3>
                 <p class="project-category">Automation</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">PLC</li>
+                  <li class="tech-tag">Automation</li>
+                  <li class="tech-tag">Control Systems</li>
+                </ul>
               </a>
             </li>
 
@@ -994,6 +1008,11 @@
                 </figure>
                 <h3 class="project-title">All Terrain Robot</h3>
                 <p class="project-category">Embedded systems</p>
+                <ul class="tech-tags-list">
+                  <li class="tech-tag">Embedded C</li>
+                  <li class="tech-tag">Arduino/ESP32</li>
+                  <li class="tech-tag">Robotics</li>
+                </ul>
               </a>
             </li>
 
@@ -1031,58 +1050,51 @@
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Competitive Programming Contests Staff</h4>
-              <span></span>
-              <p class="timeline-text">
-                Contributed to initiatives that promoted competitive programming culture and improved the quality of
-                contests and learning activities in Tunisia.
-              </p>
+              <span>Community & Contests</span>
+              <div class="timeline-text">
+                <p>Contributed to national competitive programming initiatives, mentoring student programmers, problem setting, and enhancing contest quality across Tunisia.</p>
+              </div>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Leader, Tunisian Scouts</h4>
-              <span></span>
-              <p class="timeline-text">
-                Developed leadership, team-building, and event coordination skills by leading scout activities and
-                supporting group organization.
-              </p>
+              <span>Leadership & Team Building</span>
+              <div class="timeline-text">
+                <p>Spearheaded youth development programs, organized community service projects, and led outdoor team-building workshops across Monastir.</p>
+              </div>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Organizing Committee Member, National Robotics Weekend</h4>
-              <span></span>
-              <p class="timeline-text">
-                Served as Administrative Affairs Manager, coordinating participant communication and administrative
-                processes to ensure smooth event operations.
-              </p>
+              <span>Administrative Affairs Manager</span>
+              <div class="timeline-text">
+                <p>Coordinated nationwide participant registrations, administrative workflows, and event logistics for one of Tunisia's largest annual robotics competitions.</p>
+              </div>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Robotics Workshops Instructor</h4>
-              <span></span>
-              <p class="timeline-text">
-                Delivered robotics workshops for the Tunisian Scouts during national events, including JOTA-JOTI and
-                National Scout Day.
-              </p>
+              <span>Tunisian Scouts (JOTA-JOTI & Scout Day)</span>
+              <div class="timeline-text">
+                <p>Delivered interactive STEM & robotics workshops during national Scout events, training young participants in basic electronics and hardware assembly.</p>
+              </div>
             </li>
 
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">Instructor, Moataz Mdimagh Robotics Club</h4>
-              <span></span>
-              <p class="timeline-text">
-                Taught children foundational robotics concepts through simple, hands-on projects and accessible teaching
-                methods.
-              </p>
+              <span>STEM Education</span>
+              <div class="timeline-text">
+                <p>Taught children fundamental robotics concepts, sensor integration, and block programming through hands-on creative projects.</p>
+              </div>
             </li>
 
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">General Secretary, ACM Club</h4>
-              <span></span>
-              <p class="timeline-text">
-                Managed meetings, activities, and internal communication to support members' programming growth and club
-                engagement.
-              </p>
+              <h4 class="h4 timeline-item-title">General Secretary, ACM Club INSAT</h4>
+              <span>Operations & Executive Committee</span>
+              <div class="timeline-text">
+                <p>Oversee club administrative operations, coordinate technical workshops, and drive student engagement in algorithmic problem solving.</p>
+              </div>
             </li>
-
 
           </ol>
 
@@ -1589,6 +1601,75 @@
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
+
+        <!-- Contact Information Grid -->
+        <section class="contact-info-section" style="margin-bottom: 30px;">
+          <h3 class="h3" style="margin-bottom: 20px;">Contact Information</h3>
+
+          <div class="contact-info-grid">
+
+            <div class="contact-card" data-copy="rayen.mrad@insat.ucar.tn" title="Click to copy email">
+              <div class="contact-card-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="contact-card-content">
+                <p class="contact-card-title">Email</p>
+                <a href="mailto:rayen.mrad@insat.ucar.tn" class="contact-card-link">rayen.mrad@insat.ucar.tn</a>
+              </div>
+            </div>
+
+            <div class="contact-card" data-copy="+216 93 471 084" title="Click to copy phone number">
+              <div class="contact-card-icon">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <div class="contact-card-content">
+                <p class="contact-card-title">Phone</p>
+                <a href="tel:+21693471084" class="contact-card-link">+216 93 471 084</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div class="contact-card-content">
+                <p class="contact-card-title">Location</p>
+                <p class="contact-card-text">Teboulba, Monastir, Tunisia</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <div class="contact-card-content">
+                <p class="contact-card-title">Birthday</p>
+                <p class="contact-card-text">January 25, 2004</p>
+              </div>
+            </div>
+
+            <div class="contact-card" style="grid-column: 1 / -1;">
+              <div class="contact-card-icon">
+                <ion-icon name="share-social-outline"></ion-icon>
+              </div>
+              <div class="contact-card-content">
+                <p class="contact-card-title">Social Profiles</p>
+                <div class="contact-social-grid">
+                  <a href="https://github.com/fannen-prt1" target="_blank" class="contact-social-btn" title="GitHub">
+                    <ion-icon name="logo-github"></ion-icon>
+                  </a>
+                  <a href="https://www.linkedin.com/in/rayenmrad/" target="_blank" class="contact-social-btn" title="LinkedIn">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                  <a href="https://www.facebook.com/Rayen.mr.2004" target="_blank" class="contact-social-btn" title="Facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
         <section class="mapbox" data-mapbox>
           <figure>
