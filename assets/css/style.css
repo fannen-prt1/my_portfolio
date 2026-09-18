@@ -3315,6 +3315,28 @@ textarea.form-input::-webkit-resizer {
   transform: translateY(-2px);
 }
 
+/* Outstanding Yellow Resume Button */
+.header-action-btn.cv-btn-yellow {
+  background: var(--orange-yellow-crayola);
+  color: hsl(240, 2%, 11%);
+  border: 1px solid var(--orange-yellow-crayola);
+  font-weight: 600;
+  box-shadow: 0 0 16px var(--glow-color);
+}
+
+.header-action-btn.cv-btn-yellow ion-icon {
+  color: hsl(240, 2%, 11%);
+}
+
+.header-action-btn.cv-btn-yellow:hover {
+  background: hsl(45, 100%, 55%);
+  color: hsl(240, 2%, 11%);
+  border-color: hsl(45, 100%, 55%);
+  box-shadow: 0 0 24px hsla(45, 100%, 65%, 0.7);
+  transform: translateY(-2px);
+}
+
+
 .header-cv-dropdown-wrapper {
   position: relative;
 }
